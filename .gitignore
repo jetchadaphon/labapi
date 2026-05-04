@@ -1,0 +1,29 @@
+## Build folders
+bin/
+obj/
+
+## Visual Studio
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+## Rider
+.idea/
+
+## Publish output
+publish/
+
+## Logs
+*.log
+
+## OS files
+Thumbs.db
+.DS_Store
+
+## NuGet
+*.nupkg
+
+## User-specific files
+*.userprefs
