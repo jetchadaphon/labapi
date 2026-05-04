@@ -13,11 +13,12 @@ var app = builder.Build();
 app.UseMiddleware<ErrorHandlingMiddleware>();
 app.UseMiddleware<RequestLoggingMiddleware>();
 
-if (app.Environment.IsDevelopment())
-{
-    app.UseSwagger();
-    app.UseSwaggerUI();
-}
+// Enable Swagger UI in all environments so reviewers can test the API.
+app.UseSwagger();
+app.UseSwaggerUI();
+
+// Redirect root to Swagger UI to avoid 404 on '/'
+app.MapGet("/", () => Results.Redirect("/swagger"));
 
 app.UseHttpsRedirection();
 
